@@ -1,0 +1,16 @@
+{
+  "name": "tv-films",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "bin": {
+    "film": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "0.21.1",
+    "cheerio": "1.0.0-rc.5"
+  }
+}
