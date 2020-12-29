@@ -3,6 +3,7 @@ Thumbs.db
 
 *.log
 
+.vercel/
 act/
 node_modules/
 
