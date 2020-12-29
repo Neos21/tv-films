@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+const tvFilms = require('../lib/index');
+
+(async () => {
+  try {
+    const isUseProxy  = false;
+    const isOutputLog = false;
+    const result = await tvFilms(isUseProxy, isOutputLog);
+    console.log(result.films);
+  }
+  catch(error) {
+    console.error(error);
+  }
+})();
