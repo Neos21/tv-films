@@ -8,13 +8,16 @@
   },
   "scripts": {
     "bin": "node ./bin/tv-films",
-    "docs": "browserify ./src/docs/index.js -o ./docs/index.js && cp -f ./src/docs/index.html ./docs/index.html"
+    "gh-pages": "browserify ./src/gh-pages/index.js -o ./gh-pages/index.js",
+    "netlify-build": "netlify-lambda build ./src/netlify",
+    "netlify-dev"  : "netlify-lambda serve ./src/netlify"
   },
   "dependencies": {
     "axios": "0.21.1",
     "cheerio": "1.0.0-rc.5"
   },
   "devDependencies": {
-    "browserify": "17.0.0"
+    "browserify": "17.0.0",
+    "netlify-lambda": "2.0.2"
   }
 }

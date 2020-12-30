@@ -3,8 +3,10 @@ Thumbs.db
 
 *.log
 
+# ビルドして公開するファイル
+gh-pages/index.js
+
 .vercel/
 act/
 node_modules/
-
-docs/
+netlify-functions/

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TV Films</title>  <!-- For Vercel -->
+    <title>TV Films (on Netlify)</title>
     <link rel="icon" href="https://neos21.github.io/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@neos21/neos-normalize@2.0.1/neos-normalize.min.css">
     <style>
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       console.log(new Date().toISOString(), 'Exec : Start');
       resultElem.innerHTML = `<span class="warning">Processing...</span>`;
-      const response = await fetch('./api/tv-films');
+      const response = await fetch('./.netlify/functions/tv-films');
       const result = await response.json();
       if(result.error) {
         resultElem.innerHTML = `<span class="error">Response Error : ${result.error}</span>`;
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 </p>
 <div id="result"><span class="error">Please Enable JavaScript</span></div>
 <hr>
-<p><a href="https://neos21.net/">Neo's World</a></p>
+<p><a href="https://neos21.net/">Neo's World</a> | <a href="https://github.com/Neos21/tv-films">GitHub</a></p>
 
   </body>
 </html>

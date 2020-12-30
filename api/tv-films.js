@@ -1,6 +1,5 @@
 const tvFilms = require('../lib/index');
 
-// For Vercel
 module.exports = async (_req, res) => {
   try {
     console.log(new Date().toISOString(), 'API : Start');

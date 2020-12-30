@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TV Films (on Vercel)</title>
+    <link rel="icon" href="https://neos21.github.io/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@neos21/neos-normalize@2.0.1/neos-normalize.min.css">
+    <style>
+
+body {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  label {
+    display: block;
+  }
+}
+
+dt {
+  margin: var(--nn-space-tiny) 0 0;
+}
+
+dd {
+  margin: 0;
+}
+
+.warning {
+  color: #d90;
+  font-weight: bold;
+}
+
+.error {
+  color: #f00;
+  font-weight: bold;
+}
+
+    </style>
+    <script>
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const resultElem = document.getElementById('result');
+  const exec = async () => {
+    try {
+      console.log(new Date().toISOString(), 'Exec : Start');
+      resultElem.innerHTML = `<span class="warning">Processing...</span>`;
+      const response = await fetch('./api/tv-films');
+      const result = await response.json();
+      if(result.error) {
+        resultElem.innerHTML = `<span class="error">Response Error : ${result.error}</span>`;
+        console.error(new Date().toISOString(), 'Exec : Response Error', result);
+        return;
+      }
+      if(!result.films || !result.films.length) {
+        resultElem.innerHTML = '<span class="warning">No Films</span>';
+        console.log(new Date().toISOString(), 'Exec : Finished With No Films', result);
+        return;
+      }
+      resultElem.innerHTML = '<dl>'
+        + result.films.map(film => `<dt>${film.date} : ${film.title}</dt>\n<dd>${film.meta}</dd>`).join('')
+        + '</dl>';
+      console.log(new Date().toISOString(), 'Exec : Finished', result);
+    }
+    catch(error) {
+      resultElem.innerHTML = `<span class="error">Failed : ${error.error ? error.error : error}</span>`;
+      console.error(new Date().toISOString(), 'Exec : Failed', error);
+    }
+  };
+  
+  document.getElementById('exec').addEventListener('click', exec);
+  await exec();
+});
+
+    </script>
+  </head>
+  <body>
+
+<h1>TV Films</h1>
+<p>
+  <button type="button" id="exec">Exec</button>
+</p>
+<div id="result"><span class="error">Please Enable JavaScript</span></div>
+<hr>
+<p><a href="https://neos21.net/">Neo's World</a> | <a href="https://github.com/Neos21/tv-films">GitHub</a></p>
+
+  </body>
+</html>

@@ -1,19 +1,38 @@
-# @neos21/__PACKAGE_NAME__ : __REPO_NAME__  // npm パッケージでなければ `@neos21/__PACKAGE_NAME__` は削除する
+# @neos21/tv-films : TV Films
 
-[![NPM Version](https://img.shields.io/npm/v/@neos21/__PACKAGE_NAME__.svg)](https://www.npmjs.com/package/@neos21/__PACKAGE_NAME__) [![GPR Version](https://img.shields.io/github/package-json/v/neos21/__REPO_NAME__?label=github)](https://github.com/Neos21/__REPO_NAME__/packages/__ID__)  // npm パッケージでなければ削除する
+[![NPM Version](https://img.shields.io/npm/v/@neos21/tv-films.svg)](https://www.npmjs.com/package/@neos21/tv-films) [![GPR Version](https://img.shields.io/github/package-json/v/neos21/tv-films?label=github)](https://github.com/Neos21/tv-films/packages/__ID__)
 
-__PACKAGE_DESCRIPTION__
+[![Netlify Status](https://api.netlify.com/api/v1/badges/65525609-1c21-402f-80dd-8a4444e683a2/deploy-status)](https://app.netlify.com/sites/tv-films/deploys)
 
-
-## __SOME_SECTION__
-
-__SOME_TEXT__
+- Vercel
+    - Input / Output
+        - `api/tv-films.js`
+        - `public/index.html`
+- Netlify
+    - Input
+        - `netlify.toml`
+        - `src/netlify/tv-films.js`
+    - Input / Output
+        - `netlify-public/index.html`
+    - Output
+        - `netlify-functions/tv-films.js`
+- GitHub Pages
+    - Input
+        - `src/gh-pages/index.js`
+    - Input / Output
+        - `gh-pages/index.html`
+    - Output
+        - `gh-pages/index.js`
+- Binary
+    - `bin/tv-films`
+- Library
+    - `lib/tv-films.js`
 
 
 ## Links
 
 - [Neo's World](https://neos21.net/)
-- [GitHub - Neos21](https://github.com/Neos21/)  // npm パッケージでなければ削除する
-- [GitHub - __REPO_NAME__](https://github.com/Neos21/__REPO_NAME__)  // npm パッケージでなければ削除する
-- [GitHub Pages - __REPO_NAME__ : __SITE_NAME__](https://neos21.github.io/__REPO_NAME__)  // GitHub Pages がなければ削除する
-- [npm - @neos21/__PACKAGE_NAME__](https://www.npmjs.com/package/@neos21/__PACKAGE_NAME__)  // npm パッケージでなければ削除する
+- [GitHub - Neos21](https://github.com/Neos21/)
+- [GitHub - tv-films](https://github.com/Neos21/tv-films)
+- [GitHub Pages - TV Films](https://neos21.github.io/tv-films)
+- [npm - @neos21/tv-films](https://www.npmjs.com/package/@neos21/tv-films)
