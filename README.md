@@ -21,7 +21,7 @@
         - `netlify-public/index.html`
     - Output
         - `netlify-functions/tv-films.js`
-- [GitHub Pages](https://neos21.github.io/tv-films)
+- [GitHub Pages](https://neos21.github.io/tv-films) : Not Working Because Of CORS-Anywhere
     - Input
         - `src/gh-pages/index.js`
     - Input / Output
